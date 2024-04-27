@@ -5,9 +5,8 @@ SELECT Register.contest_id,
          ELSE 0
     END AS percentage
 FROM Users
-LEFT JOIN Register
+INNER JOIN Register
 ON Users.user_id = Register.user_id
 CROSS JOIN (SELECT COUNT(*) AS total_users FROM Users) AS total
-WHERE Register.contest_id IS NOT NULL
 GROUP BY Register.contest_id
 ORDER BY percentage DESC, contest_id ASC;
