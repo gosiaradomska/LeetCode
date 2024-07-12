@@ -1,12 +1,6 @@
-SELECT name
-FROM (
-    SELECT DISTINCT m.id, m.name AS name
-    FROM Employee e
-    LEFT OUTER JOIN Employee m
-    ON e.managerId = m.id
-    WHERE m.id IN (
-        SELECT managerId
-        FROM Employee
-        GROUP BY managerId
-        HAVING COUNT(*) >= 5)
-    );
+SELECT m.name AS name
+FROM Employee e
+INNER JOIN Employee m
+ON e.managerId = m.id
+GROUP BY m.id, m.name
+HAVING COUNT(*) >= 5;
