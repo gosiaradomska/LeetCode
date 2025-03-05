@@ -1,4 +1,5 @@
 DataFrame: employees
+
 +-------------+--------+
 | Column Name | Type   |
 +-------------+--------+
@@ -7,6 +8,7 @@ DataFrame: employees
 | department  | object |
 | salary      | int    |
 +-------------+--------+
+
 Write a solution to display the first 3 rows of this DataFrame.
 
  
@@ -15,6 +17,7 @@ Example 1:
 
 Input:
 DataFrame employees
+
 +-------------+-----------+-----------------------+--------+
 | employee_id | name      | department            | salary |
 +-------------+-----------+-----------------------+--------+
@@ -25,7 +28,9 @@ DataFrame employees
 | 49          | Jonathan  | HumanResources        | 23793  |
 | 43          | Khaled    | Administration        | 40454  |
 +-------------+-----------+-----------------------+--------+
+
 Output:
+
 +-------------+---------+-------------+--------+
 | employee_id | name    | department  | salary |
 +-------------+---------+-------------+--------+
@@ -33,5 +38,6 @@ Output:
 | 90          | Alice   | Sales       | 11096  |
 | 9           | Tatiana | Engineering | 33805  |
 +-------------+---------+-------------+--------+
+
 Explanation: 
 Only the first 3 rows are displayed.
