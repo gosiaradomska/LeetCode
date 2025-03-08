@@ -1,10 +1,8 @@
 SELECT name
-FROM SalesPerson
+FROM SalesPerson sp
 WHERE name NOT IN(
-    SELECT SalesPerson.name
-    FROM SalesPerson
-    LEFT JOIN Orders
-    ON SalesPerson.sales_id = Orders.sales_id
-    LEFT JOIN Company
-    ON Orders.com_id = Company.com_id
-    WHERE Company.name = 'RED');
+    SELECT sp.name
+    FROM SalesPerson sp
+    LEFT JOIN Orders o ON sp.sales_id = o.sales_id
+    LEFT JOIN Company c ON o.com_id = c.com_id
+    WHERE c.name = 'RED');
