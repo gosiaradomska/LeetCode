@@ -1,7 +1,7 @@
-SELECT customer_number 
+SELECT sub.customer_number
 FROM (
-    SELECT customer_number, COUNT(order_number) AS order_count
-    FROM Orders
+    SELECT customer_number, COUNT(*) AS orders_count
+    FROM Orders 
     GROUP BY customer_number
-    ORDER BY order_count DESC)
-WHERE ROWNUM = 1;
+    ORDER BY orders_count DESC) sub
+LIMIT 1;
